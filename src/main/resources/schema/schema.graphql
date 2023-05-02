@@ -1,3 +1,14 @@
-type Query {
-    hello: String
+type Mutation {
+    createRecipe(input: RecipeInput): Recipe
+}
+
+type Recipe {
+    id: ID!
+    name: String!
+    description: String!
+}
+
+input RecipeInput {
+    name: String!
+    description: String!
 }
