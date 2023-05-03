@@ -7,14 +7,19 @@ jobs:
     steps:
     - name: Pull source code
       uses: actions/checkout@v3
+
     - name: set up jdk 17
       uses: actions/setup-java@v3
       with:
         distribution: temurin
         java-version: 17
         cache: gradle
+
+    - name: Enable Gradle
+      run: chmod +x ./gradlew
+
     - name: Build with Gradle
-      run: $GITHUB_WORKSPACE/gradlew build
+      run: ./gradlew build
 
     - name: Upload JARs & reports
       uses: actions/upload-artifact@v3
