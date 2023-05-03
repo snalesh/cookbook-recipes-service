@@ -1,7 +1,7 @@
 FROM eclipse-temurin:17-jdk AS builder
 
 WORKDIR /opt/app
-COPY . /opt/app
+COPY .. /opt/app
 
 RUN ./gradlew bootJar
 

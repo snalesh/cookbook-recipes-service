@@ -3,7 +3,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: ./docker/Dockerfile
+      dockerfile: docker/app/Dockerfile
       target: runner
     ports:
       - 8080:8080
@@ -12,5 +12,8 @@ services:
 
   redis:
     image: redis:7-alpine
+    volumes:
+      - ./docker/redis/storage-redis.conf:/usr/local/etc/redis/redis.conf
+    command: redis-server /usr/local/etc/redis/redis.conf
     ports:
       - 6379:6379

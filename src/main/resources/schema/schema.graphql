@@ -1,5 +1,9 @@
+type Query {
+    recipe(id: ID!): Recipe
+}
+
 type Mutation {
-    createRecipe(input: RecipeInput): Recipe
+    createRecipe(input: RecipeInput!): Recipe
 }
 
 type Recipe {

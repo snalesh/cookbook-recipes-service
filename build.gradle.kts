@@ -21,8 +21,9 @@ repositories {
 
 dependencies {
 	// Spring
-	implementation("org.springframework.boot:spring-boot-starter-data-redis")
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.springframework.boot:spring-boot-starter-data-redis")
+
 
 	// GraphQL
 	implementation(platform("com.netflix.graphql.dgs:graphql-dgs-platform-dependencies:latest.release"))
@@ -31,6 +32,8 @@ dependencies {
 	// Compiler
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
+	implementation("org.mapstruct:mapstruct:1.5.5.Final")
+	annotationProcessor("org.mapstruct:mapstruct-processor:1.5.5.Final")
 
 	// Test
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
