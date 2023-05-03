@@ -1,11 +1,8 @@
 package com.cookbook.recipes.application;
 
-import com.cookbook.recipes.application.storage.redis.RecipeRedisStorageAdapter;
-import com.cookbook.recipes.application.storage.redis.RecipeRepository;
 import com.cookbook.recipes.domain.RecipeService;
 import com.cookbook.recipes.domain.entities.Recipe;
 import com.cookbook.recipes.domain.ports.RecipeStorage;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
