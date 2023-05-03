@@ -21,12 +21,18 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
 
-    - name: Upload JARs & reports
+    - name: Upload reports
       uses: actions/upload-artifact@v3
       with:
         name: Test report
-        path: |
-          ./build/reports/
-          ./build/libs/
+        path: ./build/reports/
         if-no-files-found: error
-        retention-days: 2
+        retention-days: 1
+
+    - name: Upload JARs
+      uses: actions/upload-artifact@v3
+      with:
+        name: Test report
+        path: ./build/libs/
+        if-no-files-found: error
+        retention-days: 1
