@@ -35,16 +35,15 @@ jobs:
         if-no-files-found: error
         retention-days: 1
 
+    - name: Pull Karate Standalone JAR on cache miss
+      run: mkrdir -p ./karate
+
     - name: Pull Karate Standalone JAR from cache
       id: karate-cache
       uses: actions/cache/restore@v3
       with:
         path: karate
         key: karate-jar
-
-    - name: Pull Karate Standalone JAR on cache miss
-      if: steps.karate-cache.outputs.cache-hit != 'true'
-      run: mkrdir -p ./karate
 
     - name: Pull Karate Standalone JAR on cache miss
       if: steps.karate-cache.outputs.cache-hit != 'true'
