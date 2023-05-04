@@ -10,6 +10,13 @@ services:
     depends_on:
       - redis
 
+  app-pipeline:
+    image: snalesh/cookbook-recipes-service:test
+    ports:
+      - 8080:8080
+    depends_on:
+      - redis
+
   redis:
     image: redis:7-alpine
     volumes:
