@@ -44,6 +44,10 @@ jobs:
 
     - name: Pull Karate Standalone JAR on cache miss
       if: steps.karate-cache.outputs.cache-hit != 'true'
+      run: mkrdir -p ./karate
+
+    - name: Pull Karate Standalone JAR on cache miss
+      if: steps.karate-cache.outputs.cache-hit != 'true'
       uses: wei/wget@v1
       with:
         args: -O ./karate/karate.jar https://github.com/karatelabs/karate/releases/download/v1.4.0/karate-1.4.0.jar
