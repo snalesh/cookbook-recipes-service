@@ -35,8 +35,8 @@ jobs:
         if-no-files-found: error
         retention-days: 1
 
-    - name: Pull Karate Standalone JAR on cache miss
-      run: mkrdir -p ./karate
+    - name: create Karate folder
+      run: mkdir -p ./karate
 
     - name: Pull Karate Standalone JAR from cache
       id: karate-cache
