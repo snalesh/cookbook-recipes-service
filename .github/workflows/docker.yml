@@ -2,8 +2,8 @@ name: End to End Test
 on:
   workflow_run:
     workflows: ["build"]
-  types:
-    - completed
+    types:
+      - completed
 
 env:
   TEST_TAG: snalesh/cookbook-recipes-service:test
