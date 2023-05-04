@@ -39,19 +39,20 @@ jobs:
       id: karate-cache
       uses: actions/cache/restore@v3
       with:
+        path: karate
         key: karate-jar
 
     - name: Pull Karate Standalone JAR on cache miss
       if: steps.karate-cache.outputs.cache-hit != 'true'
       uses: wei/wget@v1
       with:
-        args: -O karate.jar https://github.com/karatelabs/karate/releases/download/v1.4.0/karate-1.4.0.jar
+        args: -O ./karate/karate.jar https://github.com/karatelabs/karate/releases/download/v1.4.0/karate-1.4.0.jar
 
     - name: Cache Karate Standalone JAR on cache miss
       if: steps.karate-cache.outputs.cache-hit != 'true'
       uses: actions/cache/save@v3
       with:
-        path: karate.jar
+        path: karate
         key: karate-jar
 
       # build docker container
